@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UI\Cli\Command;
+namespace App\UI\Console\Command;
 
 use App\Application\Command\CommandBusInterface;
 use App\Application\Command\User\SignUp\SignUpCommand as CreateUser;

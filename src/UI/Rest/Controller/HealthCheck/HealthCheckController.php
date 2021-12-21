@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\UI\Rest\Controller\HealthCheck;
 
-use App\Infrastructure\Shared\Event\ReadModel\ElasticSearchEventRepository;
 use App\Infrastructure\User\ReadModel\Mysql\MysqlReadModelUserRepository;
 use App\UI\Http\Rest\Response\OpenApi;
 use OpenApi\Annotations as OA;
@@ -13,14 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class HealthCheckController
 {
-    private ElasticSearchEventRepository $elasticSearchEventRepository;
     private MysqlReadModelUserRepository $mysqlReadModelUserRepository;
 
     public function __construct(
-        ElasticSearchEventRepository $elasticSearchEventRepository,
         MysqlReadModelUserRepository $mysqlReadModelUserRepository)
     {
-        $this->elasticSearchEventRepository = $elasticSearchEventRepository;
         $this->mysqlReadModelUserRepository = $mysqlReadModelUserRepository;
     }
 
