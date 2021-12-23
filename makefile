@@ -30,3 +30,8 @@ up: ## spin up environment
 ##################
 ##################
 ##################
+
+.PHONY: swagger
+swagger: ## spin up environment
+		./vendor/bin/openapi ./src/UI/Http/Rest -o ./public/swagger-ui/swagger.json --format json --exclude vendor --pattern "*.php"
+

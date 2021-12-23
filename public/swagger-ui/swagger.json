@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/status": {
+            "get": {
+                "summary": "API health check",
+                "operationId": "8fd15db66dd790b8648307199adb4c40",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Something wrong"
+                    }
+                }
+            }
+        }
+    }
+}

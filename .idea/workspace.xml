@@ -2,10 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a968a9fb-8036-4072-b888-1423edc6278d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/favicon-16x16.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/favicon-32x32.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/oauth2-redirect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui-bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui-es-bundle-core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui-es-bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui-standalone-preset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/swagger-ui/swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/Http/Web/Controller/Swagger/DocumentationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/Http/Web/Templates/Swagger/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Shared/Persistence/Doctrine/Migrations/Version20200727170306.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Shared/Persistence/Doctrine/Migrations/Version20200727170306.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Rest/Controller/HealthCheck/HealthCheckController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Rest/Controller/HealthCheck/HealthCheckController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/messenger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/messenger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/prod/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/Auth/GetToken/GetTokenHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/Auth/GetToken/GetTokenQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Rest/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Rest/Controller/HealthCheck/HealthCheckController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Http/Rest/Controller/HealthCheck/HealthCheckController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +174,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/UI/Http/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,6 +183,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/UI/Http/templates" />
+      <recent name="$PROJECT_DIR$/src/UI/Http" />
+      <recent name="$PROJECT_DIR$/templates/Swagger" />
+      <recent name="$PROJECT_DIR$/src/UI/Rest/Controller/Doc" />
+      <recent name="$PROJECT_DIR$/public/swagger-ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/UI/Http/Web" />
+      <recent name="$PROJECT_DIR$/src/Application/Command" />
+      <recent name="$PROJECT_DIR$/src/Application" />
+      <recent name="$PROJECT_DIR$/src/Application/Command/Shared" />
+      <recent name="$PROJECT_DIR$/src/UI/Http" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -165,7 +213,7 @@
       <workItem from="1640164264143" duration="88000" />
       <workItem from="1640164358676" duration="4126000" />
       <workItem from="1640177158357" duration="3322000" />
-      <workItem from="1640245370685" duration="3500000" />
+      <workItem from="1640245370685" duration="15168000" />
     </task>
     <servers />
   </component>

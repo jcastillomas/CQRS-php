@@ -1,5 +1,9 @@
-controllers:
-    resource: ../../src/UI/Rest/Controller/
+controllers_api:
+    resource: ../../src/UI/Http/Rest/Controller/
+    type: annotation
+
+controllers_web:
+    resource: ../../src/UI/Http/Web/Controller/
     type: annotation
 
 kernel:

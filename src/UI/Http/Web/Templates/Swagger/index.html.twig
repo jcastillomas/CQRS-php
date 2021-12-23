@@ -1,0 +1,76 @@
+<!-- HTML for dev server -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API</title>
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('swagger-ui/swagger-ui.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('swagger-ui/favicon-32x32.ico') }}" sizes="32x32" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('swagger-ui/favicon-16x16.ico') }}" sizes="16x16" />
+    <style>
+        html
+        {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after
+        {
+            box-sizing: inherit;
+        }
+
+        body
+        {
+            margin:0;
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+<div id="swagger-ui"></div>
+
+{% block javascript %}
+<script src="{{ asset('swagger-ui/swagger-ui-standalone-preset.js') }}"></script>
+<script src="{{ asset('swagger-ui/swagger-ui-bundle.js') }}"></script>
+<script>
+    window.onload = function() {
+        const ui = SwaggerUIBundle({
+            url: "{{ asset('swagger-ui/swagger.json') }}",
+            dom_id: '#swagger-ui',
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout"
+        })
+
+        window.ui = ui
+
+        ui.initOAuth({
+            clientId: "your-client-id",
+            clientSecret: "your-client-secret-if-required",
+            realm: "your-realms",
+            appName: "your-app-name",
+            scopeSeparator: " ",
+            scopes: "openid profile email phone address",
+            additionalQueryStringParams: {},
+            usePkceWithAuthorizationCodeGrant: false
+        })
+    }
+</script>
+{% endblock %}
+
+
+</body>
+
+</html>

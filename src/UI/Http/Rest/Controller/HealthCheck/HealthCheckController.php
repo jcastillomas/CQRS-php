@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UI\Rest\Controller\HealthCheck;
+namespace App\UI\Http\Rest\Controller\HealthCheck;
 
 use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,16 +18,19 @@ final class HealthCheckController
      *     name="status",
      *     methods={"GET"}
      * )
-     * @OA\Response(
-     *     response=200,
-     *     description="OK"
-     * )
-     * @OA\Response(
-     *     response=500,
-     *     description="Something wrong"
+     * @OA\Get(
+     *     path="/status",
+     *     summary="API health check",
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Something wrong"
+     *     ),
      * )
      *
-     * @OA\Tag(name="HealthCheck")
      */
     public function __invoke(Request $request): Response
     {
