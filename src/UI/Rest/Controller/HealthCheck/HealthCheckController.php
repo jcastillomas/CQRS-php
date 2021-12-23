@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\UI\Rest\Controller\HealthCheck;
 
-use App\OpenApi;
 use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 final class HealthCheckController
@@ -29,7 +29,7 @@ final class HealthCheckController
      *
      * @OA\Tag(name="HealthCheck")
      */
-    public function __invoke(Request $request): OpenApi
+    public function __invoke(Request $request): Response
     {
         $elastic = null;
         $mysql = null;
@@ -39,17 +39,10 @@ final class HealthCheckController
             //true === $mysql = $this->mysqlReadModelUserRepository->isHealthy() &&
             true
         ) {
-            return OpenApi::empty(200);
+            return new Response('ok', Response::HTTP_OK, ['content-type' => 'application/json; charset=utf-8']);
         }
 
-        return OpenApi::fromPayload(
-            [
-                'Healthy services' => [
-                    'Elastic' => $elastic,
-                    'MySQL' => $mysql,
-                ],
-            ],
-            500
-        );
+        return new Response('error', Response::HTTP_INTERNAL_SERVER_ERROR, ['content-type' => 'application/json; charset=utf-8']);
+
     }
 }
