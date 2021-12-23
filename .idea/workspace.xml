@@ -2,14 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a968a9fb-8036-4072-b888-1423edc6278d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CQRS-php-symfony-5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CQRS-php-symfony-5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/ChangeEmail/ChangeEmailCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/ChangeEmail/ChangeEmailHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/SignIn/SignInCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/SignIn/SignInHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/SignUp/SignUpCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/User/SignUp/SignUpHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/Auth/GetAuthUserByEmail/GetAuthUserByEmailHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/Auth/GetAuthUserByEmail/GetAuthUserByEmailQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/User/FindByEmail/FindByEmailHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/User/FindByEmail/FindByEmailQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Event/UserEmailChanged.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Event/UserSignedIn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Event/UserWasCreated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Exception/EmailAlreadyExistException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Exception/ForbiddenException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Exception/InvalidCredentialsException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/CheckUserByEmailInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/GetUserCredentialsByEmailInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Repository/UserRepositoryInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/Specification/UniqueEmailSpecificationInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/ValueObject/Auth/Credentials.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/ValueObject/Auth/HashedPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/User/ValueObject/Email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Shared/Bus/AsyncEvent/AsyncEventHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Shared/Bus/AsyncEvent/MessengerAsyncEventBus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Shared/Persistence/Doctrine/Migrations/Version20180102233829.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Shared/Persistence/Doctrine/Migrations/Version20200727170306.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Shared/Persistence/Doctrine/Migrations/Version20200727170306.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Auth/Auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Auth/AuthProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Auth/AuthenticationProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Auth/Guard/LoginAuthenticator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/ReadModel/Mysql/MysqlReadModelUserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/ReadModel/UserView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Repository/UserStore.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/User/Specification/UniqueEmailSpecification.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Rest/Controller/HealthCheck/HealthCheckController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Rest/Controller/HealthCheck/HealthCheckController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
@@ -17,6 +64,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -129,8 +184,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -146,7 +204,9 @@
       <workItem from="1640160031811" duration="16000" />
       <workItem from="1640160321010" duration="34000" />
       <workItem from="1640164264143" duration="88000" />
-      <workItem from="1640164358676" duration="2443000" />
+      <workItem from="1640164358676" duration="4126000" />
+      <workItem from="1640177158357" duration="3322000" />
+      <workItem from="1640245370685" duration="2543000" />
     </task>
     <servers />
   </component>

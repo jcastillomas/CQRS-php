@@ -4,21 +4,13 @@ declare(strict_types=1);
 
 namespace App\UI\Rest\Controller\HealthCheck;
 
-use App\Infrastructure\User\ReadModel\Mysql\MysqlReadModelUserRepository;
-use App\UI\Http\Rest\Response\OpenApi;
+use App\OpenApi;
 use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 final class HealthCheckController
 {
-    private MysqlReadModelUserRepository $mysqlReadModelUserRepository;
-
-    public function __construct(
-        MysqlReadModelUserRepository $mysqlReadModelUserRepository)
-    {
-        $this->mysqlReadModelUserRepository = $mysqlReadModelUserRepository;
-    }
 
     /**
      * @Route(
