@@ -27,6 +27,11 @@ final class DocumentationController
      *     name="swagger",
      *     methods={"GET"}
      * )
+     * @Route(
+     *     "/",
+     *     name="swagger",
+     *     methods={"GET"}
+     * )
      */
     public function __invoke(Request $request)
     {
