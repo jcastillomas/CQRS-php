@@ -1,0 +1,33 @@
+{%  if config is defined and config.navbarNotFixed is defined %}
+<nav class="navbar" style="box-shadow: 1px -4px 18px #ccc;">
+{%  else %}
+<nav class="navbar is-fixed-top" style="box-shadow: 1px -4px 18px #ccc;">
+{%  endif %}
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <h2>Home</h2>
+        </a>
+    </div>
+    <div id="nav" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="{{ path('swagger') }}">
+                <h2>Docs</h2>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                {% if is_granted('ROLE_USER') %}
+                    <span class="tag is-white">{{ app.user.username }}</span>
+                    <a class="button is-danger" href="{{ path('logout') }}">Exit</a>
+                {% else %}
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <a class="button is-info" href="{{ path('sign-up') }}">Sign up</a>
+                            <a class="button is-primary" href="{{ path('login') }}">Sign in</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

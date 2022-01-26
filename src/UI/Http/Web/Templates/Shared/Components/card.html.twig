@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        <p class="card-header-title">
+            {{ title }}
+        </p>
+    </div>
+    <div class="card-content">
+        {{ text }}
+        {% if urls %}
+            {% for url in urls %}
+                <div class="card-content-item">
+                    {% if url.url is defined %}
+                        <a target="{{ url.target }}" href="{{ url.url }}" type="{{ url.type }}">{{ url.text }}</a>
+                    {% elseif url.path is defined %}
+                        <a target="{{ url.target }}" href="{{ path(url.path) }}" type="{{ url.type }}">{{ url.text }}</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

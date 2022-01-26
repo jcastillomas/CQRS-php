@@ -1,0 +1,19 @@
+{% extends 'Shared/base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            {% include 'Shared/Components/card.html.twig' with
+                {
+                    'title': 'Challange!',
+                    'text': 'Enjoy codding the challange :)',
+                    'urls' : [
+                        {'text': 'Challange document', 'url': '/challange/challange.pdf', 'target': '_blank', 'type': 'application/pdf'}
+                    ]
+                }
+            only %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
