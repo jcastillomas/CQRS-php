@@ -1,19 +1,111 @@
 {
-    "openapi": "3.0.0",
-    "paths": {
-        "/status": {
-            "get": {
-                "summary": "API health check",
-                "operationId": "8fd15db66dd790b8648307199adb4c40",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "500": {
-                        "description": "Something wrong"
-                    }
-                }
-            }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Challange",
+    "version": "0.1"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "API health check",
+        "operationId": "8fd15db66dd790b8648307199adb4c40",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Something wrong"
+          }
         }
+      }
+    },
+    "/auth_check": {
+      "post": {
+        "summary": "Check user",
+        "operationId": "142ba501309abe67c0681084b06992e2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "_password": {
+                    "type": "string"
+                  },
+                  "_username": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Bad credentials"
+          }
+        }
+      }
+    },
+    "/api/user/{email}": {
+      "get": {
+        "summary": "Returns the user of the given email",
+        "operationId": "b6e0033cdb5cd7dd1cc968d9560374e0",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the user of the given email"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
     }
+  },
+  "tags": [
+    {
+      "name": "System"
+    },
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "User"
+    }
+  ]
 }

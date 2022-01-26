@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace App\UI\Http\Rest\Controller\HealthCheck;
 
 use OpenApi\Annotations as OA;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class HealthCheckController
+final class HealthCheckController extends AbstractController
 {
 
     /**
@@ -30,6 +31,7 @@ final class HealthCheckController
      *         description="Something wrong"
      *     ),
      * )
+     * @OA\Tag(name="System")
      *
      */
     public function __invoke(Request $request): Response

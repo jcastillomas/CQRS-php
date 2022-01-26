@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+controllers_api:
+  resource: ../src/UI/Http/Rest/Controller/
+  type: annotation
+
+controllers_web:
+  resource: ../src/UI/Http/Web/Controller/
+  type: annotation
+
+kernel:
+  resource: ../src/Infrastructure/Kernel.php
+  type: annotation

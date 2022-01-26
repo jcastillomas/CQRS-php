@@ -7,18 +7,13 @@ namespace App\Infrastructure\Shared\Persistence\Doctrine\Types;
 use App\Domain\Shared\Exception\DateTimeException;
 use App\Domain\Shared\ValueObject\DateTime;
 use DateTimeImmutable;
-use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\DateTimeImmutableType;
 
 class DateTimeType extends DateTimeImmutableType
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @throws DBALException
-     */
+
     public function getSQLDeclaration(array $column, AbstractPlatform $platform)
     {
         return $platform->getDateTimeTypeDeclarationSQL($column);

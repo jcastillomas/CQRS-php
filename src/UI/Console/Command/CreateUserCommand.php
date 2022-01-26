@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\UI\Console\Command;
 
 use App\Application\Command\CommandBusInterface;
-use App\Application\Command\User\SignUp\SignUpCommand as CreateUser;
+use App\Application\Command\User\SignUp\SignUpCommand;
 use Assert\AssertionFailedException;
 use Exception;
 use Ramsey\Uuid\Uuid;
@@ -51,7 +51,7 @@ class CreateUserCommand extends Command
         /** @var string $password */
         $password = $input->getArgument('password');
 
-        $command = new CreateUser($uuid, $email, $password);
+        $command = new SignUpCommand($uuid, $email, $password);
 
         $this->commandBus->handle($command);
 

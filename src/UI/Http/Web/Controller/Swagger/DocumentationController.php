@@ -9,8 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-final class DocumentationController
+
+final class DocumentationController extends AbstractController
 {
 
     private Environment $twigEnvironment;
@@ -27,10 +29,6 @@ final class DocumentationController
      *     name="swagger",
      *     methods={"GET"}
      * )
-     * @Route(
-     *     "/",
-     *     name="swagger",
-     *     methods={"GET"}
      * )
      */
     public function __invoke(Request $request)

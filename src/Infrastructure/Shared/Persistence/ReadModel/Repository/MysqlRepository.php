@@ -24,23 +24,6 @@ abstract class MysqlRepository
         $this->setEntityManager();
     }
 
-    /**
-     * @important Hold on
-     * I don't like this neither but I'm facing this and I don't know how to fix it:
-     * docker-compose -f docker-compose.yml -f etc/dev/docker-compose.yml run --rm code sh -lc './vendor/bin/phpstan analyse -l 6 -c phpstan.neon src tests'
-        116/116 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
-
-        ------ -------------------------------------------------------------------------------------------------------------
-        Line   src/Infrastructure/Shared/Persistence/ReadModel/Repository/MysqlRepository.php
-        ------ -------------------------------------------------------------------------------------------------------------
-        25     Unable to resolve the template type T in call to method Doctrine\Persistence\ObjectManager::getRepository()
-        ------ -------------------------------------------------------------------------------------------------------------
-
-
-        [ERROR] Found 1 error
-     *
-     * If you know how to solve this let me know please and I'll owe you a beer
-     */
     abstract protected function setEntityManager(): void;
 
     /**
