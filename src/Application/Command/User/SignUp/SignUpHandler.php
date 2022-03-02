@@ -24,8 +24,7 @@ final class SignUpHandler implements CommandHandlerInterface
      */
     public function __invoke(SignUpCommand $command): void
     {
-        $user = new User();
-        $user->create($command->uuid, $command->credentials);
+        $user = User::create($command->uuid, $command->credentials);
 
         $this->mysqlWriteModelUserRepository->save($user);
     }

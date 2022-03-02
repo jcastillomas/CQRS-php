@@ -15,7 +15,7 @@ class ProfileController extends AbstractRenderController
 {
     /**
      * @Route(
-     *     "/profile",
+     *     "/user/profile",
      *     name="profile",
      *     methods={"GET"}
      * )

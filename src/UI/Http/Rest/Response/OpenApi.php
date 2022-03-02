@@ -4,14 +4,19 @@ declare(strict_types=1);
 
 namespace App\UI\Http\Rest\Response;
 
-use App\Shared\Application\Query\Collection;
-use App\Shared\Application\Query\Item;
+use App\Application\Query\Collection;
+use App\Application\Query\Item;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class OpenApi extends JsonResponse
 {
     /**
      * @OA\Info(title="API Challange", version="0.1")
+     *
+     * @OA\Tag(name="User", description="USER role required")
+     * @OA\Tag(name="Admin", description="ADMIN role required")
+     * @OA\Tag(name="Auth")
+     * @OA\Tag(name="System")
      */
 
     private function __construct($data = null, int $status = self::HTTP_OK, array $headers = [], bool $json = false)
@@ -29,14 +34,14 @@ class OpenApi extends JsonResponse
         return new self(null, $status);
     }
 
-    public static function one(Item $resource, int $status = self::HTTP_OK): self
+    public static function one(Item $resource, int $status = self::HTTP_OK, array $headers = []): self
     {
         return new self(
             [
-                'data' => self::model($resource),
-                'relationships' => self::relations($resource->relationships),
+                'data' => self::model($resource)
             ],
-            $status
+            $status,
+            $headers
         );
     }
 
@@ -80,25 +85,7 @@ class OpenApi extends JsonResponse
     private static function model(Item $resource): array
     {
         return [
-            'id' => $resource->id,
-            'type' => $resource->type,
             'attributes' => $resource->resource,
         ];
-    }
-
-    /**
-     * @param Item[] $relations
-     */
-    private static function relations($relations): array
-    {
-        $result = [];
-
-        foreach ($relations as $relation) {
-            $result[$relation->type] = [
-                'data' => self::model($relation),
-            ];
-        }
-
-        return $result;
     }
 }

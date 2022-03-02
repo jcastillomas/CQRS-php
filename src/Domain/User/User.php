@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Domain\User;
 
 use App\Domain\Shared\ValueObject\DateTime;
+use App\Domain\User\Exception\InvalidCredentialsException;
 use App\Domain\User\ValueObject\Auth\Credentials;
 use App\Domain\User\ValueObject\Auth\HashedPassword;
 use App\Domain\User\ValueObject\Email;
+use App\User\Domain\Event\UserSignedIn;
 use Ramsey\Uuid\UuidInterface;
 
 /**
@@ -23,11 +25,22 @@ class User
 
     private ?DateTime $updatedAt;
 
-    public function create(UuidInterface $uuid, Credentials $credentials)
+    private ?DateTime $lastLogInAt;
+
+
+    public function __construct(?UuidInterface $uuid = null, ?Credentials $credentials = null)
     {
-        $this->uuid = $uuid;
+        if ($uuid)
+            $this->uuid = $uuid;
+        if ($credentials)
+            $this->credentials = $credentials;
+
         $this->createdAt = new DateTime();
-        $this->credentials = $credentials;
+    }
+
+    static public function create(UuidInterface $uuid, Credentials $credentials) : self
+    {
+        return new self($uuid, $credentials);
     }
 
 
@@ -61,6 +74,11 @@ class User
         return isset($this->updatedAt) ? $this->updatedAt->toString() : null;
     }
 
+    public function getLastLogInAt(): ?string
+    {
+        return isset($this->lastLogInAt) ? $this->lastLogInAt->toString() : null;
+    }
+
     public function getEmail(): string
     {
         return $this->credentials->email->toString();
@@ -71,6 +89,11 @@ class User
         return $this->uuid->toString();
     }
 
+    public function uuid(): UuidInterface
+    {
+        return $this->uuid;
+    }
+
     public function getAggregateRootId(): string
     {
         return $this->uuid->toString();
@@ -78,6 +101,12 @@ class User
 
     public function signIn(string $plainPassword) : bool
     {
+        if (!$this->credentials->password->match($plainPassword)) {
+            throw new InvalidCredentialsException('Invalid credentials entered.');
+        }
+
+        $this->lastLogInAt = new DateTime();
+
         return true;
     }
 

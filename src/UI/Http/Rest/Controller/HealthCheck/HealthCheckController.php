@@ -22,6 +22,7 @@ final class HealthCheckController extends AbstractController
      * @OA\Get(
      *     path="/status",
      *     summary="API health check",
+     *     tags={"System"},
      *     @OA\Response(
      *         response=200,
      *         description="OK"
@@ -31,7 +32,6 @@ final class HealthCheckController extends AbstractController
      *         description="Something wrong"
      *     ),
      * )
-     * @OA\Tag(name="System")
      *
      */
     public function __invoke(Request $request): Response

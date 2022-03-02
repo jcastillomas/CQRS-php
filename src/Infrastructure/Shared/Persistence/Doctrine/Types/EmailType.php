@@ -57,7 +57,8 @@ final class EmailType extends StringType
     }
 
     /**
-     * {@inheritdoc}
+     * @param AbstractPlatform $platform
+     * @return bool
      */
     public function requiresSQLCommentHint(AbstractPlatform $platform)
     {

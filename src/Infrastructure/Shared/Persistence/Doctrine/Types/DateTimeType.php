@@ -14,14 +14,21 @@ use Doctrine\DBAL\Types\DateTimeImmutableType;
 class DateTimeType extends DateTimeImmutableType
 {
 
+    /**
+     * @param array $column
+     * @param AbstractPlatform $platform
+     * @return string
+     * @throws \Doctrine\DBAL\Exception
+     */
     public function getSQLDeclaration(array $column, AbstractPlatform $platform)
     {
         return $platform->getDateTimeTypeDeclarationSQL($column);
     }
 
     /**
-     * {@inheritdoc}
-     *
+     * @param $value
+     * @param AbstractPlatform $platform
+     * @return mixed|string|null
      * @throws ConversionException
      */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
@@ -42,8 +49,9 @@ class DateTimeType extends DateTimeImmutableType
     }
 
     /**
-     * {@inheritdoc}
-     *
+     * @param $value
+     * @param AbstractPlatform $platform
+     * @return DateTime|\DateTime|DateTimeImmutable|\DateTimeInterface|mixed|null
      * @throws ConversionException
      */
     public function convertToPHPValue($value, AbstractPlatform $platform)

@@ -20,7 +20,7 @@ final class CheckController extends CommandQueryController
 {
     /**
      * @Route(
-     *     "/auth_check",
+     *     "/api/auth_check",
      *     name="auth_check",
      *     methods={"POST"},
      *     requirements={
@@ -29,8 +29,9 @@ final class CheckController extends CommandQueryController
      *     }
      * )
      * @OA\Post(
-     *     path="/auth_check",
+     *     path="/api/auth_check",
      *     summary="Check user",
+     *     tags={"Auth"},
      *     @OA\Response(
      *         response=200,
      *         description="Login success",
@@ -57,7 +58,6 @@ final class CheckController extends CommandQueryController
      *         )
      *     )
      * )
-     * @OA\Tag(name="Auth")
      *
      * @throws AssertionFailedException
      * @throws InvalidCredentialsException
@@ -65,13 +65,13 @@ final class CheckController extends CommandQueryController
      */
     public function __invoke(Request $request): OpenApi
     {
-        $username = $request->get('_username');
-
+        $content = json_decode($request->getContent(), true);
+        $username = $content['_username'];
         Assertion::notNull($username, 'Username cant\'t be empty');
 
         $signInCommand = new SignInCommand(
             $username,
-            $request->get('_password')
+            $content['_password']
         );
 
         $this->handle($signInCommand);

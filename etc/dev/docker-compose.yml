@@ -1,15 +1,48 @@
-version: '3'
+version: '3.7'
+
 services:
+
+  nginx:
+    image: nginx:alpine
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    volumes:
+      - ../../:/var/www
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+
+  php:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+      target: php-dev
+    volumes:
+      - ../../:/var/www
+    ports:
+      - "2323:22"
+      - "9000:9000"
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    environment:
+      PHP_IDE_CONFIG: serverName=es.local
+      XDEBUG_CONFIG: remote_connect_back=0 remote_host=host.docker.internal remote_port=9000
+
   mysql:
-    container_name: mysql-development
-    image: mysql:5.7.12
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+     - "./mysql:/etc/mysql/conf.d"
+    tmpfs:
+     - /var/lib/mysql/:rw,noexec,nosuid,size=600m
+     - /tmp/:rw,noexec,nosuid,size=50m
     environment:
       - MYSQL_ROOT_PASSWORD=api
       - MYSQL_DATABASE=api
     ports:
       - "3306:3306"
-    networks:
-      - development
 
-networks:
-  development:

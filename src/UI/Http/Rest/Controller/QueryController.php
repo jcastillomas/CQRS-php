@@ -48,7 +48,7 @@ abstract class QueryController
 
     protected function json(Item $resource, int $status = Response::HTTP_OK): OpenApi
     {
-        return OpenApi::one($resource, $status);
+        return OpenApi::one($resource, $status, ['Content-Type' => 'application/json']);
     }
 
     protected function route(string $name, array $params = []): string

@@ -7,15 +7,20 @@ namespace App\Application\Query;
 
 final class Item
 {
-    public string $resource;
+    public array $resource;
 
-    private function __construct(string $payload)
+    private function __construct(array $payload)
     {
         $this->resource = $payload;
     }
 
     public static function fromArray(array $payload): self
     {
-        new self(json_encode($payload));
+        return new self($payload);
+    }
+
+    private function fromJson(string $payload)
+    {
+        $this->resource = json_decode($payload, true);
     }
 }

@@ -1,5 +1,9 @@
 parameters:
-
+    exception_to_status:
+        InvalidArgumentException: 400
+        App\Domain\User\Exception\InvalidCredentialsException: 401
+        App\Domain\User\Exception\ForbiddenException: 403
+        App\Infrastructure\Shared\Persistence\ReadModel\Exception\NotFoundException: 404
 services:
     _defaults:
         autowire: true

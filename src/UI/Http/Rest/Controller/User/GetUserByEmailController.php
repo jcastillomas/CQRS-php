@@ -18,13 +18,15 @@ final class GetUserByEmailController extends QueryController
 {
     /**
      * @Route(
-     *     "/api/user/{email}",
+     *     "/api/admin/user/{email}",
      *     name="find_user",
      *     methods={"GET"}
      * )
      * @OA\Get(
-     *     path="/api/user/{email}",
+     *     path="/api/admin/user/{email}",
      *     summary="Returns the user of the given email",
+     *     tags={"Admin"},
+     *
      *     @OA\Response(
      *         response=200,
      *         description="Returns the user of the given email",
@@ -44,9 +46,6 @@ final class GetUserByEmailController extends QueryController
      *         )
      *     )
      * )
-     *
-     * @OA\Tag(name="User")
-     *
      *
      * @throws AssertionFailedException
      * @throws Throwable

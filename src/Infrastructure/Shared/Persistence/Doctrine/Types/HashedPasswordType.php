@@ -57,7 +57,8 @@ final class HashedPasswordType extends StringType
     }
 
     /**
-     * {@inheritdoc}
+     * @param AbstractPlatform $platform
+     * @return bool
      */
     public function requiresSQLCommentHint(AbstractPlatform $platform)
     {

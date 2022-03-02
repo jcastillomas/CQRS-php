@@ -72,7 +72,11 @@ final class LoginAuthenticator extends AbstractLoginFormAuthenticator
     public function authenticate(Request $request): Passport
     {
         $credentials = $this->getCredentials($request);
+        return $this->createPassportCredentials($credentials);
+    }
 
+    public function createPassportCredentials(array $credentials): Passport
+    {
         try {
             $email = $credentials['email'];
             $plainPassword = $credentials['password'];

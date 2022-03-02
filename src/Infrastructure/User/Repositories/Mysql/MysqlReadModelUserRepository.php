@@ -33,20 +33,6 @@ final class MysqlReadModelUserRepository extends MysqlRepository implements User
     }
 
     /**
-     * @throws NonUniqueResultException
-     */
-    public function existsEmail(Email $email): ?UuidInterface
-    {
-        $userId = $this->getUserByEmailQueryBuilder($email)
-            ->select('user.uuid')
-            ->getQuery()
-            ->getOneOrNullResult(AbstractQuery::HYDRATE_ARRAY)
-        ;
-
-        return $userId['uuid'] ?? null;
-    }
-
-    /**
      * @throws NotFoundException
      * @throws NonUniqueResultException
      */
@@ -65,6 +51,37 @@ final class MysqlReadModelUserRepository extends MysqlRepository implements User
     {
         return $this->oneOrException(
             $this->getUserByEmailQueryBuilder($email),
+            AbstractQuery::HYDRATE_ARRAY
+        );
+    }
+
+    private function getUserByUuidQueryBuilder(UuidInterface $uuid): QueryBuilder
+    {
+        return $this->repository
+            ->createQueryBuilder('user')
+            ->where('user.uuid = :uuid')
+            ->setParameter('uuid', $uuid->getBytes());
+    }
+
+    /**
+     * @throws NotFoundException
+     * @throws NonUniqueResultException
+     */
+    public function oneByUuid(UuidInterface $uuid): User
+    {
+        return $this->oneOrException(
+            $this->getUserByUuidQueryBuilder($uuid)
+        );
+    }
+
+    /**
+     * @throws NotFoundException
+     * @throws NonUniqueResultException
+     */
+    public function oneByUuidAsArray(UuidInterface $uuid): array
+    {
+        return $this->oneOrException(
+            $this->getUserByUuidQueryBuilder($uuid),
             AbstractQuery::HYDRATE_ARRAY
         );
     }
